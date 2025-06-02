@@ -1,6 +1,7 @@
 
 import { ArrowRight, TrendingUp, Database, DollarSign } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -23,8 +24,10 @@ const Hero = () => {
                 Start Free Trial
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" size="lg" className="px-8 py-3">
-                Watch Demo
+              <Button variant="outline" size="lg" className="px-8 py-3" asChild>
+                <Link to="/demo">
+                  Watch Demo
+                </Link>
               </Button>
             </div>
             
