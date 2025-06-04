@@ -9,10 +9,15 @@ export const useAuth = () => {
     setIsAuthenticated(authStatus === 'true');
   }, []);
 
+  const login = () => {
+    localStorage.setItem('isAuthenticated', 'true');
+    setIsAuthenticated(true);
+  };
+
   const logout = () => {
     localStorage.removeItem('isAuthenticated');
     setIsAuthenticated(false);
   };
 
-  return { isAuthenticated, logout };
+  return { isAuthenticated, login, logout };
 };
