@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -13,7 +14,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
               <Zap className="h-8 w-8 text-green-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">EnergyData</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">LumenAI</span>
             </div>
           </div>
           

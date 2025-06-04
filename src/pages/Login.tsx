@@ -56,7 +56,7 @@ const Login = () => {
         <CardHeader className="text-center">
           <div className="flex items-center justify-center mb-4">
             <Zap className="h-8 w-8 text-green-600" />
-            <span className="ml-2 text-xl font-bold text-gray-900">EnergyData</span>
+            <span className="ml-2 text-xl font-bold text-gray-900">LumenAI</span>
           </div>
           <CardTitle className="text-2xl">Sign In</CardTitle>
         </CardHeader>

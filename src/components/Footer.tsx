@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
               <Zap className="h-8 w-8 text-green-500" />
-              <span className="ml-2 text-2xl font-bold">EnergyData</span>
+              <span className="ml-2 text-2xl font-bold">LumenAI</span>
             </div>
             <p className="text-gray-400 mb-6 max-w-md">
               Transforming renewable energy data into economic performance insights for forward-thinking businesses.
@@ -59,9 +59,14 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © 2024 EnergyData. All rights reserved.
-          </p>
+          <div className="flex flex-col space-y-2 text-center md:text-left">
+            <p className="text-gray-400 text-sm">
+              © 2024 LumenAI. All rights reserved.
+            </p>
+            <p className="text-gray-400 text-sm">
+              Email: hello@lumenenergies.com | Phone: +33 (0) 75 93 27 51
+            </p>
+          </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Terms of Service</a>

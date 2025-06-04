@@ -11,7 +11,7 @@ const Hero = () => {
           <div className="max-w-xl">
             <h1 className="text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
               Transform 
-              <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"> Renewable Data</span> 
+              <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent"> Renewable Data </span> 
               into Economic Power
             </h1>
             

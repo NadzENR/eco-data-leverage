@@ -18,11 +18,12 @@ import {
   DollarSign,
   Activity,
   MapPin,
-  Zap
+  Zap,
+  LogOut
 } from 'lucide-react';
 
 const Dashboard = () => {
-  const { isAuthenticated, isLoading } = useAuth();
+  const { isAuthenticated, isLoading, logout } = useAuth();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,6 +31,11 @@ const Dashboard = () => {
       navigate('/login');
     }
   }, [isAuthenticated, isLoading, navigate]);
+
+  const handleSignOut = () => {
+    logout();
+    navigate('/login');
+  };
 
   if (isLoading) {
     return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
@@ -48,11 +54,14 @@ const Dashboard = () => {
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
               <Zap className="h-8 w-8 text-green-600" />
-              <span className="ml-2 text-xl font-bold text-gray-900">EnergyData Dashboard</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">LumenAI Dashboard</span>
             </div>
             <div className="flex items-center space-x-4">
               <span className="text-sm text-gray-600">Welcome, user1</span>
-              <Button variant="outline" size="sm">Sign Out</Button>
+              <Button variant="outline" size="sm" onClick={handleSignOut}>
+                <LogOut className="h-4 w-4 mr-2" />
+                Sign Out
+              </Button>
             </div>
           </div>
         </div>
