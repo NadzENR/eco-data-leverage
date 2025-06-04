@@ -1,7 +1,7 @@
-
 import { useState } from 'react';
 import { Menu, X, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +27,9 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" size="sm">Sign In</Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/login">Sign In</Link>
+            </Button>
             <Button size="sm" className="bg-green-600 hover:bg-green-700">Get Started</Button>
           </div>
 
@@ -50,7 +52,9 @@ const Navbar = () => {
             <a href="#solutions" className="block px-3 py-2 text-gray-600 hover:text-green-600">Solutions</a>
             <a href="#contact" className="block px-3 py-2 text-gray-600 hover:text-green-600">Contact</a>
             <div className="px-3 py-2 space-y-2">
-              <Button variant="outline" size="sm" className="w-full">Sign In</Button>
+              <Button variant="outline" size="sm" className="w-full" asChild>
+                <Link to="/login">Sign In</Link>
+              </Button>
               <Button size="sm" className="w-full bg-green-600 hover:bg-green-700">Get Started</Button>
             </div>
           </div>
