@@ -3,10 +3,12 @@ import { useState, useEffect } from 'react';
 
 export const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const authStatus = localStorage.getItem('isAuthenticated');
     setIsAuthenticated(authStatus === 'true');
+    setIsLoading(false);
   }, []);
 
   const login = () => {
@@ -19,5 +21,5 @@ export const useAuth = () => {
     setIsAuthenticated(false);
   };
 
-  return { isAuthenticated, login, logout };
+  return { isAuthenticated, login, logout, isLoading };
 };

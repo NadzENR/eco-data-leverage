@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -14,13 +15,19 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { isAuthenticated, login } = useAuth();
+  const { isAuthenticated, login, isLoading: authLoading } = useAuth();
 
   useEffect(() => {
-    if (isAuthenticated) {
+    if (!authLoading && isAuthenticated) {
       navigate('/dashboard');
     }
-  }, [isAuthenticated, navigate]);
+  }, [isAuthenticated, authLoading, navigate]);
+
+  if (authLoading) {
+    return <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-white flex items-center justify-center">
+      <div>Loading...</div>
+    </div>;
+  }
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -33,7 +40,6 @@ const Login = () => {
         title: "Login successful",
         description: "Welcome to your dashboard!",
       });
-      navigate('/dashboard');
     } else {
       toast({
         title: "Login failed",
