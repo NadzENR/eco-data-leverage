@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/hooks/useAuth';
@@ -21,6 +20,13 @@ import {
   Zap,
   LogOut
 } from 'lucide-react';
+
+import { PRTrendChart } from '@/components/dashboard/PRTrendChart';
+import { SoilingTrendChart } from '@/components/dashboard/SoilingTrendChart';
+import { ForecastChart } from '@/components/dashboard/ForecastChart';
+import { RevenueChart } from '@/components/dashboard/RevenueChart';
+import { HealthTimeline } from '@/components/dashboard/HealthTimeline';
+import { AssetMap } from '@/components/dashboard/AssetMap';
 
 const Dashboard = () => {
   const { isAuthenticated, isLoading, logout } = useAuth();
@@ -103,9 +109,7 @@ const Dashboard = () => {
                   <span className="text-sm text-gray-600">Current PR</span>
                   <span className="text-2xl font-bold text-green-600">94.2%</span>
                 </div>
-                <div className="h-32 bg-gray-100 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">PR Trend Chart</span>
-                </div>
+                <PRTrendChart />
                 <div className="text-xs text-gray-500">
                   +2.1% vs expected | Target: 92%
                 </div>
@@ -126,9 +130,7 @@ const Dashboard = () => {
                   <span className="text-sm text-gray-600">Energy Loss</span>
                   <span className="text-2xl font-bold text-orange-600">3.2%</span>
                 </div>
-                <div className="h-32 bg-gray-100 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">Soiling Trend Chart</span>
-                </div>
+                <SoilingTrendChart />
                 <div className="text-xs text-red-600">
                   ⚠️ Cleaning recommended in 3 days
                 </div>
@@ -149,9 +151,7 @@ const Dashboard = () => {
                   <span className="text-sm text-gray-600">MAPE</span>
                   <span className="text-2xl font-bold text-blue-600">8.7%</span>
                 </div>
-                <div className="h-32 bg-gray-100 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">Forecast vs Actual</span>
-                </div>
+                <ForecastChart />
                 <div className="text-xs text-gray-500">
                   RMSE: 12.3 MW | Bias: -1.2%
                 </div>
@@ -184,9 +184,7 @@ const Dashboard = () => {
                     <div className="text-xl font-bold text-purple-600">€89.20</div>
                   </div>
                 </div>
-                <div className="h-32 bg-gray-100 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">Revenue Waterfall Chart</span>
-                </div>
+                <RevenueChart />
               </div>
             </CardContent>
           </Card>
@@ -214,9 +212,7 @@ const Dashboard = () => {
                     <span className="px-2 py-1 rounded text-xs font-medium bg-red-100 text-red-800">62</span>
                   </div>
                 </div>
-                <div className="h-24 bg-gray-100 rounded flex items-center justify-center">
-                  <span className="text-sm text-gray-500">Health Timeline</span>
-                </div>
+                <HealthTimeline />
               </div>
             </CardContent>
           </Card>
@@ -230,9 +226,7 @@ const Dashboard = () => {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="h-64 bg-gray-100 rounded flex items-center justify-center">
-              <span className="text-gray-500">Interactive map showing asset locations with color-coded performance indicators</span>
-            </div>
+            <AssetMap />
           </CardContent>
         </Card>
       </div>
